@@ -38,7 +38,7 @@ function makeFile(fileName, fileContent) {
 }
 function deleteFolder(folderPath){
   if (fs.existsSync(folderPath)) {
-  fs.rmdir(folderPath, { recursive: true }, (err) => {
+  fs.rm(folderPath, { recursive: true }, (err) => {
   if (err) {
     console.error(`Error cleaning files: ${err}`);
   } else {
