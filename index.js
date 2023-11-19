@@ -147,10 +147,7 @@ app.get("/lol/:id1", (req, res) => {
     addrandomChar("Never gonna let you down", "ㅤ"),
     addrandomChar("Never gonna give you up", "ㅤ"),
   ]);
-  res.sendFile("/backend/flooder.html");
-});
-app.get("/done", (req, res) => {
-  res.send("Kahoot botted!");
+  res.sendFile(path.join(__dirname, "/backend/rickrolled.html"));
 });
 app.all("/*", (req, res) => {
   res.status(404);
