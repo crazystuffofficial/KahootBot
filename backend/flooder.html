@@ -53,7 +53,9 @@ if(y2.replace("error", "").startsWith(",")){
 }
 if(y == "100"){
     alert("Done botting");
-    location.href = location.origin;
+    var redirectUrl = new URL(location.origin);
+    redirectUrl.port = location.port;
+    location = redirectUrl;
 }
 }, 1000);
     </script>
