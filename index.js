@@ -76,8 +76,6 @@ app.get("/:id1/:id2/:id3/:id4", (req, res) => {
         makeFile("static" + req.url + "/status.txt", "success, Successfully joined a bot!");
         number2++;
       });
-    } else {
-      console.log(Math.floor(Math.random() * 100000).toString());
     }
     client.on("QuizEnd", () => {
       console.log("Game has ended. :(");
@@ -104,8 +102,6 @@ app.get("/die/:id1", (req, res) => {
         makeFile("static" + req.url + "/status.txt", "success, Successfully joined a bot!");
         number2++;
       });
-    } else {
-      console.log(Math.floor(Math.random() * 100000).toString());
     }
     client.on("QuizEnd", () => {
       console.log("Game has ended.");
@@ -130,8 +126,6 @@ app.get("/lol/:id1", (req, res) => {
         client.on("Joined", () => {
           console.log("Bots sent: " + number2++);
         });
-      } else {
-        console.log(Math.floor(Math.random() * 100000).toString());
       }
       client.on("QuizEnd", () => {
         console.log("Game has ended.");
