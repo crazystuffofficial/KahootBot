@@ -58,7 +58,7 @@ function makeCrashString(str) {
   }
   return str;
 }
-app.get("/:id1/:id2/:id3/:id4", (req, res) => {
+app.get("/:id1/:id2/:id3/:id4/flooder.html", (req, res) => {
   number = 1;
   number2 = 1;
   setInterval(kahoot, 850);
@@ -83,7 +83,7 @@ app.get("/:id1/:id2/:id3/:id4", (req, res) => {
   }
   res.sendFile(path.join(__dirname, "/backend/flooder.html"));
 });
-app.get("/die/:id1", (req, res) => {
+app.get("/die/:id1/flooder.html", (req, res) => {
   fs.writeFileSync("/static/", fileContent);
   number = 1;
   number2 = 1;
@@ -109,7 +109,7 @@ app.get("/die/:id1", (req, res) => {
   }
   res.sendFile(path.join(__dirname, "/backend/flooder.html"));
 });
-app.get("/lol/:id1", (req, res) => {
+app.get("/lol/:id1/rickroll.html", (req, res) => {
   number = 1;
   number2 = 1;
   function joinPeople(array) {
