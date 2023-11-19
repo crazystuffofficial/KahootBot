@@ -69,11 +69,11 @@ app.get("/:id1/:id2/:id3/:id4", (req, res) => {
     client = new Kahoot();
     if (number <= parseInt(bots)) {
       client.join(pin, name + number++).catch((error) => {
-        makeFile(req.url.slice(1, req.url.length) + "/status.txt", "error, " + error.description);
+        makeFile("static" + req.url + "/status.txt", "error, " + error.description);
       });
       makeFile(req.url.slice(1, req.url.length) + "/percent.txt", ((number / parseInt(bots)) * 100).toString());
       client.on("Joined", () => {
-        makeFile(req.url.slice(1, req.url.length) + "/status.txt", "success, Successfully joined a bot!");
+        makeFile("static" + req.url + "/status.txt", "success, Successfully joined a bot!");
         number2++;
       });
     } else {
@@ -97,11 +97,11 @@ app.get("/die/:id1", (req, res) => {
     client = new Kahoot();
     if (number <= parseInt(bots)) {
       client.join(pin, name + number++).catch((error) => {
-        makeFile(req.url.slice(1, req.url.length) + "/status.txt", "error, " + error.description);
+        makeFile("static" + req.url + "/status.txt", "error, " + error.description);
       });
-      makeFile(req.url.slice(1, req.url.length) + "/percent.txt", ((number / parseInt(bots)) * 100).toString());
+      makeFile("static" + req.url + "/percent.txt", ((number / parseInt(bots)) * 100).toString());
       client.on("Joined", () => {
-        makeFile(req.url.slice(1, req.url.length) + "/status.txt", "success, Successfully joined a bot!");
+        makeFile("static" + req.url + "/status.txt", "success, Successfully joined a bot!");
         number2++;
       });
     } else {
