@@ -46,7 +46,7 @@ let x2 = await fetch("status.txt");
 let y = await x.text();
 let y2 = await x2.text();
 document.querySelector("#percent").innerHTML = y + "% done botting...";
-if(y2.replace("error").startsWith(",")){
+if(y2.replace("error", "").startsWith(",")){
     document.querySelector("#status").innerHTML = '<p class="error">' + y2.replace("error, ", "") + '</p>';
 } else{
     document.querySelector("#status").innerHTML = '<p class="success">' + y2.replace("success, ", "") + '</p>';
