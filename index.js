@@ -156,7 +156,7 @@ app.get("/lol/:id1/rickroll.html", (req, res) => {
     addrandomChar("Never gonna let you down", "ㅤ"),
     addrandomChar("Never gonna give you up", "ㅤ"),
   ]);
-  res.sendFile(path.join(__dirname, "/backend/rickrolled.html"));
+  res.sendFile(path.join(__dirname, "/backend/rickroll.html"));
 });
 app.all("/*", (req, res) => {
   res.status(404);
