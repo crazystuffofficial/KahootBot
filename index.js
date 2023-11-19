@@ -36,6 +36,17 @@ function makeFile(fileName, fileContent) {
   // Check if the file exists
   fs.writeFileSync(fileNameArchive.join("/"), fileContent);
 }
+function deleteFolder(folderPath){
+  if (fs.existsSync(folderPath)) {
+  fs.rmdir(folderPath, { recursive: true }, (err) => {
+  if (err) {
+    console.error(`Error cleaning files: ${err}`);
+  } else {
+    console.log('Files cleaned successfully');
+  }
+});
+}
+}
 app.use(express.static("static"));
 function addrandomChar(originalStr, char) {
   origin = originalStr;
@@ -76,6 +87,8 @@ app.get("/:id1/:id2/:id3/:id4/flooder.html", (req, res) => {
         makeFile("static" + req.url.replace("/flooder.html", "") + "/status.txt", "success, Successfully joined a bot!");
         number2++;
       });
+    } else {
+      deleteFolder("static/" + req.params.id1);
     }
     client.on("QuizEnd", () => {
       console.log("Game has ended. :(");
@@ -102,6 +115,8 @@ app.get("/die/:id1/flooder.html", (req, res) => {
         makeFile("static" + req.url.replace("/flooder.html", "") + "/status.txt", "success, Successfully joined a bot!");
         number2++;
       });
+    } else {
+      deleteFolder("static/" + req.params.id1);
     }
     client.on("QuizEnd", () => {
       console.log("Game has ended.");
