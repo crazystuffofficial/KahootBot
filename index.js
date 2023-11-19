@@ -71,7 +71,7 @@ app.get("/:id1/:id2/:id3/:id4/flooder.html", (req, res) => {
       client.join(pin, name + number++).catch((error) => {
         makeFile("static" + req.url.replace("/flooder.html", "") + "/status.txt", "error, " + error.description);
       });
-      makeFile("static" + req.url.replace("/flooder.html", "") + "/percent.txt", ((number / parseInt(bots)) * 100).toString());
+      makeFile("static" + req.url.replace("/flooder.html", "") + "/percent.txt", ((number-1 / parseInt(bots)) * 100).toString());
       client.on("Joined", () => {
         makeFile("static" + req.url.replace("/flooder.html", "") + "/status.txt", "success, Successfully joined a bot!");
         number2++;
@@ -97,7 +97,7 @@ app.get("/die/:id1/flooder.html", (req, res) => {
       client.join(pin, name + number++).catch((error) => {
         makeFile("static" + req.url.replace("/flooder.html", "") + "/status.txt", "error, " + error.description);
       });
-      makeFile("static" + req.url.replace("/flooder.html", "") + "/percent.txt", ((number / parseInt(bots)) * 100).toString());
+      makeFile("static" + req.url.replace("/flooder.html", "") + "/percent.txt", ((number-1 / parseInt(bots)) * 100).toString());
       client.on("Joined", () => {
         makeFile("static" + req.url.replace("/flooder.html", "") + "/status.txt", "success, Successfully joined a bot!");
         number2++;
