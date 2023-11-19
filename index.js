@@ -97,7 +97,6 @@ app.get("/:id1/:id2/:id3/:id4/flooder.html", (req, res) => {
   res.sendFile(path.join(__dirname, "/backend/flooder.html"));
 });
 app.get("/die/:id1/flooder.html", (req, res) => {
-  fs.writeFileSync("/static/", fileContent);
   number = 1;
   number2 = 1;
   setInterval(kahoot, 850);
