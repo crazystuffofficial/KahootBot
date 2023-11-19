@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html{
+            font-family: arial;
+        }
+        .error{
+            color: red;
+        }
+        .success{
+            color: green;
+        }
+    </style>
+    <script>
+        setInterval(async function(){
+let x = await fetch("percent.txt");
+let x2 = await fetch("status.txt");
+let y = await x.text();
+let y2 = await x2.text();
+document.querySelector("#percent").innerHTML = y + "% done botting...";
+if(y2.replace("error").startsWith(",")){
+    document.querySelector("#status").innerHTML = '<p class="error">' + y2.replace("error, ", "") + '</p>';
+} else{
+    document.querySelector("#status").innerHTML = '<p class="success">' + y2.replace("success, ", "") + '</p>';
+}
+if(y == "100"){
+    alert("Done botting");
+    location.href = location.origin;
+}
+}, 1000);
+    </script>
+</head>
+<body>
+    <h1>Botting...</h1>
+    <p id="percent">0% done botting...</p>
+    <div id="status"></p>
+</body>
+</html>
