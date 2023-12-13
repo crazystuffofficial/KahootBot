@@ -162,4 +162,4 @@ app.all("/*", (req, res) => {
   res.set("Content-Type", "text/plain");
   res.send("404 Not Found");
 });
-listenApp(app, [8080, 8081, 8082, 8083, 8084, 8000, 3000, 9000, 7000]);
+listenApp(app, [8080, 8081, 8082, 8083, 8084]);
